@@ -30,7 +30,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "e_upms_menu", uniqueConstraints = @UniqueConstraint(columnNames = "code"))
 @Erupt(
-        name = "菜单管理",
+        name = "메뉴 관리",
         orderBy = "EruptMenu.sort asc",
         tree = @Tree(pid = "parentMenu.id", expandLevel = 5),
         dataProxy = EruptMenuService.class
@@ -43,9 +43,9 @@ public class EruptMenu extends MetaModel {
     public static final String CODE = "code";
 
     @EruptField(
-            views = @View(title = "名称"),
+            views = @View(title = "이름"),
             edit = @Edit(
-                    title = "名称",
+                    title = "이름",
                     notNull = true
             )
     )
@@ -54,7 +54,7 @@ public class EruptMenu extends MetaModel {
     @EruptField(
             edit = @Edit(
                     notNull = true,
-                    title = "状态",
+                    title = "상태",
                     type = EditType.CHOICE,
                     choiceType = @ChoiceType(fetchHandler = MenuStatus.ChoiceFetch.class)
             )
@@ -64,7 +64,7 @@ public class EruptMenu extends MetaModel {
     @ManyToOne
     @EruptField(
             edit = @Edit(
-                    title = "上级菜单",
+                    title = "이전 메뉴",
                     type = EditType.REFERENCE_TREE,
                     referenceTreeType = @ReferenceTreeType(pid = "parentMenu.id", expandLevel = 3)
             )
@@ -73,7 +73,7 @@ public class EruptMenu extends MetaModel {
 
     @EruptField(
             edit = @Edit(
-                    title = "菜单类型",
+                    title = "메뉴 종류",
                     type = EditType.CHOICE,
                     choiceType = @ChoiceType(fetchHandler = MenuTypeEnum.ChoiceFetch.class)
             )
@@ -82,22 +82,22 @@ public class EruptMenu extends MetaModel {
 
     @EruptField(
             edit = @Edit(
-                    title = "类型值"
+                    title = "유형 값"
             )
     )
     private String value;
 
     @EruptField(
             edit = @Edit(
-                    title = "顺序"
+                    title = "주문"
             )
     )
     private Integer sort = 0;
 
     @EruptField(
             edit = @Edit(
-                    title = "图标",
-                    desc = "请参考图标库font-awesome"
+                    title = "아이콘",
+                    desc = "font-awesome라이브러리 참고"
             )
     )
     private String icon;
@@ -105,7 +105,7 @@ public class EruptMenu extends MetaModel {
     @Column(length = AnnotationConst.CODE_LENGTH)
     @EruptField(
             edit = @Edit(
-                    title = "编码", readonly = @Readonly
+                    title = "코딩", readonly = @Readonly
             )
     )
     private String code;
@@ -113,8 +113,8 @@ public class EruptMenu extends MetaModel {
     @Column(length = AnnotationConst.REMARK_LENGTH)
     @EruptField(
             edit = @Edit(
-                    title = "自定义参数",
-                    desc = "json格式，通过上下文获取，根据业务需求自助解析",
+                    title = "맞춤 매개변수",
+                    desc = "json비즈니스 요구에 따른 컨텍스트, 셀프 서비스 구문 분석을 통해 얻은 형식",
                     type = EditType.CODE_EDITOR,
                     codeEditType = @CodeEditorType(language = "json")
             )

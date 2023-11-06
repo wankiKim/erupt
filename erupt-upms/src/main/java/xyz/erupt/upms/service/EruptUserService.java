@@ -65,7 +65,7 @@ public class EruptUserService {
 
     private final Gson gson = GsonFactory.getGson();
 
-    public static final String LOGIN_ERROR_HINT = "账号或密码错误";
+    public static final String LOGIN_ERROR_HINT = "잘못된 사용자 이름 또는 비밀번호";
 
     public void cacheUserInfo(EruptUser eruptUser, String token) {
         List<EruptMenu> eruptMenus = eruptMenuService.getUserAllMenu(eruptUser);

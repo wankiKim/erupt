@@ -1,0 +1,6 @@
+#FileLock
+#Mon Nov 06 04:48:25 KST 2023
+server=192.168.1.6\:13614
+hostName=Wans-Dev
+method=file
+id=18ba10781420970a4a96ec4dd2edf48285caa130a2b

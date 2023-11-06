@@ -25,7 +25,7 @@ import java.util.Date;
 @EruptI18n
 @Erupt(
         orderBy = "startTime desc",
-        name = "任务日志",
+        name = "임무 기록",
         power = @Power(export = true, add = false, edit = false, viewDetails = false)
 )
 @Entity
@@ -37,44 +37,44 @@ public class EruptJobLog extends BaseModel {
     @ManyToOne
     @JoinColumn(name = "job_id")
     @EruptField(
-            views = @View(title = "任务名称", column = "name"),
-            edit = @Edit(title = "任务名称", show = false, search = @Search, type = EditType.REFERENCE_TREE)
+            views = @View(title = "임무 이름", column = "name"),
+            edit = @Edit(title = "임무 이름", show = false, search = @Search, type = EditType.REFERENCE_TREE)
     )
     private EruptJob eruptJob;
 
     @EruptField(
-            views = @View(title = "任务参数")
+            views = @View(title = "작업 매개변수")
     )
     private String handlerParam;
 
     @EruptField(
-            views = @View(title = "任务状态"),
-            edit = @Edit(title = "任务状态", boolType = @BoolType(trueText = "成功", falseText = "失败"), search = @Search)
+            views = @View(title = "작업 상태"),
+            edit = @Edit(title = "작업 상태", boolType = @BoolType(trueText = "성공", falseText = "실패"), search = @Search)
     )
     private Boolean status;
 
     @EruptField(
-            views = @View(title = "开始时间", type = ViewType.DATE_TIME)
+            views = @View(title = "시작 시간", type = ViewType.DATE_TIME)
     )
     private Date startTime;
 
     @EruptField(
-            views = @View(title = "结束时间",type = ViewType.DATE_TIME)
+            views = @View(title = "종료 시간",type = ViewType.DATE_TIME)
     )
     private Date endTime;
 
     @Column(length = 2000)
     @EruptField(
-            views = @View(title = "执行结果"),
-            edit = @Edit(title = "执行结果")
+            views = @View(title = "결과"),
+            edit = @Edit(title = "결과")
     )
     private String resultInfo;
 
     @Lob
     @Type(type = "org.hibernate.type.TextType")
     @EruptField(
-            views = @View(title = "错误信息", type = ViewType.HTML),
-            edit = @Edit(title = "错误信息")
+            views = @View(title = "에러 메시지", type = ViewType.HTML),
+            edit = @Edit(title = "에러 메시지")
     )
     private String errorInfo;
 

@@ -46,56 +46,61 @@ public class EruptJob extends MetaModelUpdateVo {
 
     @Column(length = AnnotationConst.CODE_LENGTH)
     @EruptField(
-            views = @View(title = "编码", width = "100px")
+            views = @View(title = "코딩", width = "100px")
     )
     private String code;
 
     @EruptField(
-            views = @View(title = "任务名称"),
-            edit = @Edit(title = "任务名称", notNull = true, search = @Search(vague = true))
+            views = @View(title = "명령 이름"),
+            edit = @Edit(title = "명령 이름", notNull = true, search = @Search(vague = true))
     )
     private String name;
 
     @EruptField(
+<<<<<<< Updated upstream
             views = @View(title = "Cron表达式"),
             edit = @Edit(title = "Cron表达式", notNull = true)
+=======
+            views = @View(title = "Cron표현식", width = "150px"),
+            edit = @Edit(title = "Cron표현식", notNull = true)
+>>>>>>> Stashed changes
     )
     private String cron;
 
     @EruptField(
-            views = @View(title = "JOB处理类"),
-            edit = @Edit(title = "JOB处理类", desc = "实现EruptJobHandler接口即可",
+            views = @View(title = "JOB 처리 클래스"),
+            edit = @Edit(title = "JOB 처리 클래스", desc = "EruptJobHandler 인터페이스를 구현하기만 하면 됩니다.",
                     choiceType = @ChoiceType(fetchHandler = ChoiceFetchEruptJobHandler.class)
                     , notNull = true, search = @Search, type = EditType.CHOICE)
     )
     private String handler;
 
     @EruptField(
-            views = @View(title = "任务状态"),
-            edit = @Edit(title = "任务状态", boolType = @BoolType(
-                    trueText = "启用", falseText = "禁用"
+            views = @View(title = "작업 상태"),
+            edit = @Edit(title = "작업 상태", boolType = @BoolType(
+                    trueText = "사용", falseText = "금지"
             ), notNull = true, search = @Search)
     )
     private Boolean status;
 
     @Column(length = AnnotationConst.REMARK_LENGTH)
     @EruptField(
-            views = @View(title = "失败通知邮箱"),
-            edit = @Edit(title = "失败通知邮箱", desc = "使用此功能需配置发信邮箱", type = EditType.TAGS, tagsType = @TagsType)
+            views = @View(title = "실패 알림 이메일"),
+            edit = @Edit(title = "실패 알림 이메일", desc = "이 기능을 사용하려면 보내는 이메일 주소를 구성해야 합니다.", type = EditType.TAGS, tagsType = @TagsType)
     )
     private String notifyEmails;
 
     @Column(length = AnnotationConst.REMARK_LENGTH)
     @EruptField(
-            views = @View(title = "任务参数"),
-            edit = @Edit(title = "任务参数", type = EditType.CODE_EDITOR)
+            views = @View(title = "작업 매개변수"),
+            edit = @Edit(title = "작업 매개변수", type = EditType.CODE_EDITOR)
     )
     private String handlerParam;
 
     @Column(length = AnnotationConst.REMARK_LENGTH)
     @EruptField(
-            views = @View(title = "描述"),
-            edit = @Edit(title = "描述")
+            views = @View(title = "설명"),
+            edit = @Edit(title = "설명")
     )
     private String remark;
 

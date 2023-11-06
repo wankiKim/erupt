@@ -80,7 +80,7 @@ public class EruptUserController {
             try {
                 EruptUser eruptUser = loginProxy.login(account, pwd);
                 if (null == eruptUser) {
-                    loginModel.setReason("账号或密码错误");
+                    loginModel.setReason("잘못된 사용자 이름 또는 비밀번호");
                     loginModel.setPass(false);
                 } else {
                     loginModel.setEruptUser(eruptUser);

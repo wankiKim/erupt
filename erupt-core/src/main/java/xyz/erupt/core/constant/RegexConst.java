@@ -8,6 +8,6 @@ public class RegexConst {
 
     public static final String EMAIL_REGEX = "^([a-z0-9A-Z]+[-|_|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
 
-    public static final String PHONE_REGEX = "^[1][3,4,5,6,7,8,9][0-9]{9}$";
+    public static final String PHONE_REGEX = "^\\s*(?:\\+?(\\d{1,3})[-. (]*)?\\s*((01[016789]{3})[-. )]*)?((\\d{3,4})[-. ]*)+(\\d{4})+\\s*$";
 
 }

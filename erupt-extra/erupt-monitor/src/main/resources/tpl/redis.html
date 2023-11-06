@@ -35,18 +35,18 @@
             <el-col :span="12" :xs="24">
                 <el-card :body-style="{padding:'0'}" class="box-card" shadow="always">
                     <div class="clearfix" slot="header">
-                        <span>Redis 信息</span>
+                        <span>Redis 정보</span>
                     </div>
                     <div style="height: 410px">
                         <div class="attr">
-                            <p class="d-flex">版本号：<span class="ml_auto">{{redis.version}}</span></p>
-                            <p class="d-flex">端口号：<span class="ml_auto">{{redis.port}}</span></p>
-                            <p class="d-flex">运行天数：<span class="ml_auto">{{redis.day}} 天</span></p>
-                            <p class="d-flex">是否集群：<span class="ml_auto">{{redis.isCluster ? '是' : '否'}}</span></p>
-                            <p class="d-flex">持久化方式：<span class="ml_auto">{{redis.isAOF ? 'AOF' : 'RDB'}}</span></p>
-                            <p class="d-flex">已连接客户端：<span class="ml_auto">{{redis.clientNum}}</span></p>
-                            <p class="d-flex">总内存：<span class="ml_auto">{{redis.totalMem}}</span></p>
-                            <p class="d-flex" style="border-bottom: none">已用内存：<span
+                            <p class="d-flex">버전 번호:<span class="ml_auto">{{redis.version}}</span></p>
+                            <p class="d-flex">포트 번호:<span class="ml_auto">{{redis.port}}</span></p>
+                            <p class="d-flex">운영일:<span class="ml_auto">{{redis.day}} 天</span></p>
+                            <p class="d-flex">클러스터링 여부:<span class="ml_auto">{{redis.isCluster ? '是' : '否'}}</span></p>
+                            <p class="d-flex">지속성 방법:<span class="ml_auto">{{redis.isAOF ? 'AOF' : 'RDB'}}</span></p>
+                            <p class="d-flex">연결된 클라이언트:<span class="ml_auto">{{redis.clientNum}}</span></p>
+                            <p class="d-flex">총 메모리:<span class="ml_auto">{{redis.totalMem}}</span></p>
+                            <p class="d-flex" style="border-bottom: none">사용된 메모리:<span
                                     class="ml_auto">{{redis.usedMem}}</span></p>
                         </div>
                     </div>

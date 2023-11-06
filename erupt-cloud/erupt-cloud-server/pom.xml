@@ -9,7 +9,11 @@
     <parent>
         <groupId>xyz.erupt</groupId>
         <artifactId>erupt</artifactId>
+<<<<<<< Updated upstream
         <version>1.10.15</version>
+=======
+        <version>1.12.7</version>
+>>>>>>> Stashed changes
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
@@ -52,4 +56,3 @@
         </dependency>
     </dependencies>
 </project>
-

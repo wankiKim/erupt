@@ -44,35 +44,35 @@ import java.util.Date;
 public class EruptMail extends BaseModel {
 
     @EruptField(
-            views = @View(title = "接收人"),
-            edit = @Edit(title = "接收人", notNull = true, search = @Search(vague = true),
+            views = @View(title = "받는사람"),
+            edit = @Edit(title = "받는사람", notNull = true, search = @Search(vague = true),
                     inputType = @InputType(fullSpan = true, regex = RegexConst.EMAIL_REGEX))
     )
     private String recipient;
 
     @EruptField(
-            views = @View(title = "抄送人"),
-            edit = @Edit(title = "抄送人", type = EditType.TAGS)
+            views = @View(title = "참조"),
+            edit = @Edit(title = "참조", type = EditType.TAGS)
     )
     private String cc;
 
     @EruptField(
-            views = @View(title = "主题"),
-            edit = @Edit(title = "主题", notNull = true, search = @Search(vague = true), inputType = @InputType(fullSpan = true))
+            views = @View(title = "제목"),
+            edit = @Edit(title = "제목", notNull = true, search = @Search(vague = true), inputType = @InputType(fullSpan = true))
     )
     private String subject;
 
     @EruptField(
-            views = @View(title = "状态"),
-            edit = @Edit(title = "状态", boolType = @BoolType(trueText = "成功", falseText = "失败"), show = false)
+            views = @View(title = "상태"),
+            edit = @Edit(title = "상태", boolType = @BoolType(trueText = "성공", falseText = "실패"), show = false)
     )
     private Boolean status;
 
     @Lob
     @Type(type = "org.hibernate.type.TextType")
     @EruptField(
-            views = @View(title = "内容"),
-            edit = @Edit(title = "内容", notNull = true, type = EditType.HTML_EDITOR)
+            views = @View(title = "콘텐츠"),
+            edit = @Edit(title = "콘텐츠", notNull = true, type = EditType.HTML_EDITOR)
     )
     private String content;
 
@@ -80,12 +80,12 @@ public class EruptMail extends BaseModel {
     private String errorInfo;
 
     @EruptField(
-            views = @View(title = "发送时间")
+            views = @View(title = "발송시간")
     )
     private Date createTime;
 
     @EruptField(
-            views = @View(title = "发送人")
+            views = @View(title = "발신인")
     )
     @EruptSmartSkipSerialize
     private String createBy;

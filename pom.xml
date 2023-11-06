@@ -5,12 +5,16 @@
 
     <groupId>xyz.erupt</groupId>
     <artifactId>erupt</artifactId>
+<<<<<<< Updated upstream
     <version>1.10.15</version>
+=======
+    <version>1.12.7</version>
+>>>>>>> Stashed changes
 
     <packaging>pom</packaging>
     <name>erupt</name>
     <description>erupt common data framework pom parent</description>
-    <url>https://www.erupt.xyz</url>
+    <url>https://www.beautyblock.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -131,12 +135,12 @@
     </scm>
     <developers>
         <developer>
-            <name>yuepeng</name>
-            <email>erupts@126.com</email>
+            <name>KimWanKi</name>
+            <email>jerry10247@gmail.com</email>
             <roles>
                 <role>owner</role>
             </roles>
-            <timezone>+8</timezone>
+            <timezone>+9</timezone>
         </developer>
     </developers>
 
@@ -227,4 +231,3 @@
         </profile>
     </profiles>
 </project>
-
